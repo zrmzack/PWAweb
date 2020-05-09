@@ -26,7 +26,6 @@ function sendAjaxQuery(url, data) {
             document.getElementById('results_story').appendChild(row2);
             row2.innerHTML ="story:"+ story + "</div>"
 
-
             var date = ret['date'];
             // document.getElementById('results_date').innerHTML = "date:"+date;
             const row3= document.createElement('div');
@@ -46,6 +45,11 @@ function sendAjaxQuery(url, data) {
             const row6 = document.createElement('div');
             document.getElementById('results_img3').appendChild(row6);
             row6.innerHTML =image3 + "</div>"
+
+            var image4 = ret['image4'];
+            const row7 = document.createElement('div');
+            document.getElementById('results_img4').appendChild(row6);
+            row6.innerHTML =image4 + "</div>"
 
         },
         error: function (xhr, status, error) {

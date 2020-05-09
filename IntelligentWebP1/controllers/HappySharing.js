@@ -14,6 +14,7 @@ exports.insert = function (req, res) {
             image1:userData.img1_url,
             image2:userData.img2_url,
             image3:userData.img3_url,
+            image4:userData.img4_url,
         });
 
 

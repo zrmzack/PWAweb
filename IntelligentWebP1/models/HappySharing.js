@@ -5,11 +5,12 @@ var Schema = mongoose.Schema;
 var HappySharing = new Schema(
     {
         user_name:{type:String,required:true,max:20},
-        stories:{type:String,required: true,max: 150},
+        stories:{type:String,           max: 150},
         date:{type:String},
         image1:{type:String},
         image2:{type:String},
-        image3:{type:String}
+        image3:{type:String},
+        image4:{type:String}
     }
 );
 

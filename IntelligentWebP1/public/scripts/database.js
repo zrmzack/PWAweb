@@ -33,6 +33,7 @@ function getdata() {
             var image1 = document.getElementById("img1_url").value;
             var image2 = document.getElementById("img2_url").value;
             var image3 = document.getElementById("img3_url").value;
+            var image4 = document.getElementById("img4_url").value;
 
             await store.add({
                 username: username,
@@ -40,12 +41,14 @@ function getdata() {
                 date: new Date().toLocaleString(),
                 image1: image1,
                 image2: image2,
-                image3: image3
+                image3: image3,
+                image4: image4,
             });
 
             return tx.complete;
         }).then(function () {
             console.log('added item to the store! ');
+            showdata()
         }).catch(function (error) {
             console.log("wrong")
         });
@@ -104,9 +107,11 @@ function retrivestore() {
 
 
 function showdata() {
-    document.getElementById("username").value="";
+    const video = document.getElementById('video');
+    video.srcObject=null
     document.getElementById("story").value="";
     document.getElementById("img1_url").value="";
     document.getElementById("img2_url").value="";
     document.getElementById("img3_url").value="";
+    document.getElementById("img4_url").value="";
 }
