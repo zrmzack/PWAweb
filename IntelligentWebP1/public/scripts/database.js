@@ -71,7 +71,7 @@ function retrivestore() {
             console.log('Cursored at:', cursor.key);
             for (var field in cursor.value) {
                 if (field != "id") {
-                    if (field == "usrename") {
+                    if (field == "username") {
                         const row = document.createElement('div');
                         document.getElementById('result').appendChild(row);
                         row.innerHTML = "Username:" + cursor.value[field] + "</div>"

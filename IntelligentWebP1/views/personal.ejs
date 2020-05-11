@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<% include head%>
+
+<link rel="stylesheet" href="/styles/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/styles/inline.css">
+<script src="/scripts/jquery.min.js"></script>
+<script src="/scripts/bootstrap.min.js"></script>
+<script src="/scripts/index.js"></script>
+<script src="/scripts/imageupload.js"></script>
+<script src="/scripts/photos.js"></script>
+
+
+<head>
+    <title>personal</title>
+    <% include head%>
+</head>
+<body onload="reloadPage()">
+<h1>Hello, <%= username %></h1>
+<% data.map(function(item,index){ %>
+username:<span><%= item.user_name %></span><br>
+date:<span><%= item.date  %></span><br>
+story:<span><%= item.stories  %></span><br>
+<span><div><%= item.image1 %></div></span>
+<div><%= item.image2 %></div>
+<div><%= item.image3 %></div>
+<div><%= item.image4 %></div>
+<hr>
+
+<% }) %>
+
+
+<script src="/scripts/app.js"></script>
+<script src="/scripts/database.js"></script>
+<script src="/scripts/idb.js"></script>
+</body>
+</html>

@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html>
+
+<script src="/scripts/jquery.min.js"></script>
+<link rel="stylesheet" href="/styles/bootstrap.min.css">
+<script src="/scripts/bootstrap.min.js"></script>
+
 <head>
     <title>regist</title>
     <% include head%>
 </head>
 <body>
 
-<h3>login</h3>
 
-<form action="users/login" method="post">
-    <input type="text" name="username" value="" placeholder="input username">
-    <input type="password" name="password" value="" placeholder="input password">
-    <input type="submit" value="login">
+<form action="users/login" method="post" style="margin-left:500px;margin-top:80px; ">
+    <h2 class="form-title" style="margin-left:140px; width: 300px; margin-bottom:20px; ">Log in to your account</h2>
+    <div class="form-group">
+        <label for="user" stype="display:inline;">Username：</label>
+        <input type="text" name="username" class="form-control" style="display:inline;width:400px" value="" placeholder="username" >
+    </div>
+
+    <div class="form-group">
+        <label for="Password" stype="display:inline;">Password：</label>
+        <input type="password" name="password" class="form-control"  style="display:inline;width:400px" value="" placeholder="password">
+    </div>
+    <div class="form-group"><button type="button" class="btn btn-link" style="margin-left:84px; width: 400px;" ><a href="/regist">Not Register? Click it</a></button></div>
+
+    <div class="form-group"><input type="submit" class="btn btn-primary"  style="margin-left:85px; width: 400px;" value="Login"></div>
 </form>
-<div>got account,<a href="/regist">regist</a>! </div>
+
 </body>
 </html>

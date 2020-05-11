@@ -100,8 +100,8 @@ function showImg3() {
 
 
 function reloadPage() {
-    if(location.href.indexOf('#reloaded')==-1){ //判断是否有刷新标记
-        location.href=location.href+"#reloaded";//没有添加标记
-        location.reload();//刷新
+    if(location.href.indexOf('#reloaded')==-1){
+        location.href=location.href+"#reloaded";
+        location.reload();
     }
 }
