@@ -15,89 +15,109 @@
 
 </head>
 <body onload="initHappySharing(),reloadPage() ">
-<h1>Hello,  <%= username %></h1>
 
-<a href="/personal">personal wall</a>
+<div class="col-md-12">
+    <div class="panel panel-info ">
+        <div class="panel-heading">
+            <ul class="nav nav-pills  nav-justified" style="margin-top:10px;">
+                <li class="active" ><a href="#">Create New Story</a></li>
+                <li><a href="/personal">Personal Wall</a></li>
+            </ul><br>
+            <h1>Hello,  <%= username %></h1>
 
+            <div class="panel panel-default">
+                <div class="panel-body">
 
-<div class="box">
-    <div class="login-content">
-        <div class="form">
-            <form id="modifyPassword" class="form-horizontal col-md-offset-1" onsubmit="onSubmit('/index')">
-                <div class="input-group">
-                                        <span class="input-group-addon"><span
-                                                class="glyphicon glyphicon-user"></span></span>
-                    <input readonly="readonly" value= <%= username %> type="text" id="username" name="username"
-                           placeholder=  <%= username %> size="10" >
+                    <form id="modifyPassword"  onsubmit="onSubmit('/index')">
+                        <div class="input-group" >
+                <span class="input-group-addon" >
+                    <span class="glyphicon glyphicon-user"></span></span>
+                            <input readonly="readonly" value= <%= username %> type="text" id="username" name="username"
+                                   placeholder=  <%= username %> size="10" style=" margin-left:40px;">
+                        </div>
+
+                        <div class="form-group" >
+                            <label for="user" style="display:inline; margin-left:20px; " class="pull-left">Story：</label>
+                            <textarea class="form-control" id="story" name="story"  style="display:inline;width:400px; margin-left:10px;" placeholder="input your stories" value="" rows="10" maxlength="500"></textarea>
+                        </div>
+
+                        <div class="form-group" >
+
+                            <label for="user" style="display:inline; margin-left:20px; " class="pull-left">Picture：</label>
+
+                            <input type="hidden" id="img1_url" name="img1_url" >
+                            <input type="file" onchange="showImg1()" onclick="upload()" id="img1_file" style=" margin-left:80px;"><img src="" alt=""
+                                                                                                                                       id="img_id1"
+                                                                                                                                       style="width: 100px; margin-left:80px;" >
+
+                            <input type="hidden" id="img2_url" name="img2_url" >
+                            <input type="file" onchange="showImg2()" onclick="upload2()" id="img2_file" style=" margin-left:80px;"><img src="" alt=""
+                                                                                                                                        id="img_id2"
+                                                                                                                                        style="width: 100px; margin-left:80px;">
+
+                            <input type="hidden" id="img3_url" name="img3_url" >
+                            <input type="file" onchange="showImg3()" onclick="upload3()" id="img3_file" style=" margin-left:80px;"><img src="" alt=""
+                                                                                                                                        id="img_id3"
+                                                                                                                                        style="width: 100px; margin-left:80px;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="user" style="display:inline; margin-left:20px; " class="pull-left">Camera：</label>
+
+                            <div class="form-group">
+                                <button type="button" class="btn btn-info" onclick=startup()>Open Camera</button>
+                            </div>
+
+                            <video width="200" height="200" id="video" style=" margin-left:80px; margin-bottom: 10px;" autoplay>Video stream not available</video>
+
+                            <div class="form-group">
+                                <button type="button" class="btn btn-success" style=" margin-left:80px;" onclick="getphoto()">take Picture</button>
+                            </div>
+
+                            <canvas id="canvas" width="200" height="200" style=" margin-left:80px;"></canvas>
+                            <input type="hidden" id="img4_url" name="img4_url">
+
+                            <div class="form-group form-actions">
+                                <input type="submit" name="g" value="Submit" class="btn btn-primary"   style="margin-left:85px; width: 600px;" id="g" onclick="getdata()">
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                                    <textarea id="story" name="story"
-                                              placeholder="input your stories" value="" rows="10" maxlength="500"></textarea>
-
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">picture</label>
-                    <div class="layui-input-block">
-                        <input type="hidden" id="img1_url" name="img1_url">
-                        <input type="file" onchange="showImg1()" onclick="upload()" id="img1_file"><img src="" alt=""
-                                                                                                        id="img_id1"
-                                                                                                        style="width: 100px">
-
-                        <input type="hidden" id="img2_url" name="img2_url">
-                        <input type="file" onchange="showImg2()" onclick="upload2()" id="img2_file"><img src="" alt=""
-                                                                                                         id="img_id2"
-                                                                                                         style="width: 100px">
-
-                        <input type="hidden" id="img3_url" name="img3_url">
-                        <input type="file" onchange="showImg3()" onclick="upload3()" id="img3_file"><img src="" alt=""
-                                                                                                         id="img_id3"
-                                                                                                         style="width: 100px">
-
-
-                        <video width="200" height="100" id="video" autoplay>Video stream not available</video>
-                        <button type="button" onclick="getphoto()">take photo</button>
-                        <canvas id="canvas" width="200" height="100"></canvas>
-                        <!--<img id='photo'>-->
-                        <input type="hidden" id="img4_url" name="img4_url">
-                        <button type="button" onclick=startup()>choose your own photo</button>
-                    </div>
-                </div>
-
-
-                <div class="form-group form-actions">
-                    <input type="submit" name="g" value="Submit" id="g" onclick="getdata()">
-                </div>
-
-            </form>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 <div id="main">
     <div id="list">
-        <ul>
-            <li>
+        <div class="col-md-12">
+            <div class="panel panel-info ">
+                <div class="panel-heading">
+                    <ul class="nav nav-pills  nav-justified" style="margin-top:10px;">
+                        <li  class="active"><a href="/">User Wall</a></li>
+                    </ul><br>
 
-                <div id="result"></div>
-                <div id="results_username"></div>
-                <div id="results_story"></div>
-                <div id="results_date"></div>
-                <div id="results_img1"></div>
-                <div id="results_img2"></div>
-                <div id="results_img3"></div>
-                <div id="results_img4"></div>
-                <div class="po-cmt">
-                    <div class="po-hd">
-                        <div></div>
+                    <div class="form-group">
+                        <div class="list-group" >
+                            <div id="result" class="list-group-item" ></div><hr>
+                            <div id="results_username"></div>
+                            <div id="results_story"></div>
+                            <div id="results_date"></div>
+                            <div id="results_img1"></div>
+                            <div id="results_img2"></div>
+                            <div id="results_img3"></div>
+                            <div id="results_img4"></div>
+                            <div class="po-cmt">
+                                <div class="po-hd">
+                                    <div></div>
 
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </li>
-        </ul>
+            </div></div>
     </div>
-</div>
-
 </div>
 <script src="/scripts/app.js"></script>
 <script src="/scripts/database.js"></script>

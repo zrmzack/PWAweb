@@ -16,22 +16,32 @@
     <% include head%>
 </head>
 <body onload="reloadPage()">
-<h1>Hello, <%= username %></h1>
-<% data.map(function(item,index){ %>
-username:<span><%= item.user_name %></span><br>
-date:<span><%= item.date  %></span><br>
-story:<span><%= item.stories  %></span><br>
-<span><div><%= item.image1 %></div></span>
-<div><%= item.image2 %></div>
-<div><%= item.image3 %></div>
-<div><%= item.image4 %></div>
-<hr>
+<div class="col-md-12">
+    <div class="panel panel-info ">
+        <div class="panel-heading">
+            <ul class="nav nav-pills  nav-justified" style="margin-top:10px;">
+                <li ><a href="/">Create New Story</a></li>
+                <li class="active" ><a href="/personal">Personal Wall</a></li>
+            </ul><br>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1>Hello, <%= username %></h1>
+                    <% data.map(function(item,index){ %>
+                        username:<span><%= item.user_name %></span><br>
+                        date:<span><%= item.date  %></span><br>
+                        story:<span><%= item.stories  %></span><br>
+                        <span><div><%= item.image1 %></div></span>
+                        <div><%= item.image2 %></div>
+                        <div><%= item.image3 %></div>
+                        <div><%= item.image4 %></div>
+                        <hr>
 
-<% }) %>
+                    <% }) %>
+                </div>
+            </div>
 
-
-<script src="/scripts/app.js"></script>
-<script src="/scripts/database.js"></script>
-<script src="/scripts/idb.js"></script>
+            <script src="/scripts/app.js"></script>
+            <script src="/scripts/database.js"></script>
+            <script src="/scripts/idb.js"></script>
 </body>
 </html>
