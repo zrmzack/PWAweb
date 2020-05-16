@@ -114,4 +114,9 @@ function showdata() {
     document.getElementById("img2_url").value="";
     document.getElementById("img3_url").value="";
     document.getElementById("img4_url").value="";
+    document.getElementById('img3_file').value="";
+    document.getElementById('img2_file').value="";
+    document.getElementById('img1_file').value="";
+    document.getElementById('canvas').value="";
+
 }
