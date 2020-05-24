@@ -11,7 +11,7 @@
     <script src="/scripts/index.js"></script>
     <script src="/scripts/imageupload.js"></script>
     <script src="/scripts/photos.js"></script>
-
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 
 </head>
 <body onload="initHappySharing(),reloadPage() ">
@@ -122,5 +122,8 @@
 <script src="/scripts/app.js"></script>
 <script src="/scripts/database.js"></script>
 <script src="/scripts/idb.js"></script>
+<script>
+    var socket = io.connect('http://localhost');
+</script>
 </body>
 </html>

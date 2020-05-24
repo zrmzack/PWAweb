@@ -16,6 +16,7 @@ router.get('/', function (req, res, next) {
 
 });
 
+
 router.post('/index', happySharing.insert);
 //
 // router.post('/index', happySharing.getUser);

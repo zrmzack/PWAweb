@@ -15,6 +15,7 @@ try {
         checkServerIdentity: false,
     });
     console.log('connection to mongodb worked!');
+    console.log('the port is 3001');
 
 // db.dropDatabase();
 
