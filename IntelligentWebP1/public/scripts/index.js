@@ -60,6 +60,7 @@ function sendAjaxQuery(url, data) {
             alert('Error: worong' + error.message);
         }
     });
+
 }
 
 function onSubmit(url) {

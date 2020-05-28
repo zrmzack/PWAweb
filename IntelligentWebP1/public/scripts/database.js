@@ -7,7 +7,6 @@ const HappySharing_STORE_NAME = 'store_HappySharing';
  * it inits the database
  */
 function initDatabase() {
-
     dbPromise = idb.openDb(HappySharing_DB_NAME, 1, function (upgradeDb) {
         if (!upgradeDb.objectStoreNames.contains(HappySharing_STORE_NAME)) {
             var facebookDB = upgradeDb.createObjectStore(HappySharing_STORE_NAME, {keyPath: 'id', autoIncrement: true});
